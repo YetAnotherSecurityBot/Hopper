@@ -1,5 +1,6 @@
 #![forbid(unsafe_code)]
-#[macro_use] extern crate rocket;
+#[macro_use]
+extern crate rocket;
 
 #[get("/")]
 fn index() -> &'static str {
@@ -23,7 +24,8 @@ fn log_error() -> String {
 }
 
 #[launch]
-fn rocket() -> _ { // Ignore the error on the underscore. It works fine, trust me.
+fn rocket() -> _ {
+    // Ignore the error on the underscore. It works fine, trust me.
     rocket::build()
         .mount("/", routes![index, log_error])
         .register("/", catchers![not_found_general, bad_request])
