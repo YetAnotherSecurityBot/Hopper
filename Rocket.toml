@@ -1,0 +1,6 @@
+#  This is because we're overriding the handler with our own one.
+[default.shutdown]
+ctrlc = false
+signals = [""]
+grace = 10
+mercy = 5
